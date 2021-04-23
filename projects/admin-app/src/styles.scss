@@ -1,0 +1,143 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "../../../node_modules/bootstrap/scss/utilities";
+@import "../../../node_modules/bootstrap/scss/media";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+html, body { height: 100%; overflow-y: auto; font-family: "Montserrat" !important;}
+// @font-face {font-family: "Montserrat"; src: url("//db.onlinewebfonts.com/t/51e35a1ffb5e3b1585fa96a24179dd52.eot"); src: url("//db.onlinewebfonts.com/t/51e35a1ffb5e3b1585fa96a24179dd52.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/51e35a1ffb5e3b1585fa96a24179dd52.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/51e35a1ffb5e3b1585fa96a24179dd52.woff") format("woff"), url("//db.onlinewebfonts.com/t/51e35a1ffb5e3b1585fa96a24179dd52.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/51e35a1ffb5e3b1585fa96a24179dd52.svg#Circe") format("svg"); }
+// @font-face {
+//     font-family: "Comic Sans MS";
+//     src: url("../../admin-app/src/assets/fonts/comic-sans-ms_[allfont.net].ttf") format("truetype");
+// }
+body { margin: 0; }
+body{
+    font-family: "Montserrat" !important;
+    font-size:20px !important;
+}
+h1,h2,h3,h4,h5{
+    font-family: "Montserrat" !important;
+}
+.table th, .table td
+{
+    word-break: break-all;
+    min-width: 150px;
+}
+$sm-width: 823px;
+.no-outline
+{
+    outline: none !important;
+}
+.pointer
+{
+    cursor: pointer;
+}
+.small_font
+{
+    font-size: 70%;
+}
+.h-350x
+{
+    height:350px !important;
+}
+.h-100vh
+{
+    height:100vh !important
+}
+
+@media (max-width: $sm-width) {
+    #no-more-tables table,
+    #no-more-tables thead,
+    #no-more-tables tbody,
+    #no-more-tables th,
+    #no-more-tables td:not(.mf-footer),
+    #no-more-tables tr {
+        display: block;
+    }
+    #no-more-tables thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    #no-more-tables tr {
+        border: 1px solid #ccc;
+        height: auto;
+    }
+    #no-more-tables td:not(.mf-footer) {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50% !important;
+        white-space: normal;
+        text-align: left;
+    }
+    #no-more-tables td:before {
+        position: absolute;
+        top: 8px;
+        left: 5%;
+        width: 45%;
+        padding-right: 10px;
+        white-space: normal;
+        text-align: left;
+    }
+    .data_table_design tfoot tr {
+        display: flex;
+        justify-content: center;
+    }
+    .data_table_design tfoot tr {
+        display: block;
+    }
+    #no-more-tables td:before {
+        content: attr(title);
+    }
+}
+.o-contain
+{
+    object-fit: contain;
+}
+.h-200x
+{
+    height:200px
+}
+.custom-select{
+    cursor:pointer;
+}
+.z-index-4
+{
+    z-index: 9999;
+}
+.list-style-type-none
+{
+    list-style-type: none;
+}
+.bs-datepicker-container
+{
+    padding: 0px !important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: "Montserrat" !important; font-size: 17px; }
+.demo-sidebar
+{
+    width:300px !important;
+    border-right: 1px solid #dee2e6 !important;
+    background-color: #fff;
+    z-index: 1021 !important;
+}
+.alert_container
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 99999;
+    width: 100%;
+}
+.h-100x
+{
+    height:100px;
+}
+.ng-sidebar__content
+{
+    overflow-x: hidden !important;
+}

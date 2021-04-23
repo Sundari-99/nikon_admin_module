@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center">
+<div class="container col-md-10">
+    <div class="ml-3">
+    <h2 class="mt-4">Global Admin Passwords</h2>
+    <h5>Add or remove global admin passwords</h5>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 p-0">
+                <div class="d-flex flex-row bd-highlight mb-3">
+                    <div class="p-2 bd-highlight col-8"><input type="text" class="form-control" style="border:2px solid #f4f4f4;" placeholder="nikonxstuck"></div>
+                    <div class="p-2 bd-highlight col-8"><button class="btn btn-danger" style="background:#f83227">Remove</button></div>
+                  </div>
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="d-flex flex-row bd-highlight mb-3">
+                    <div class="p-2 bd-highlight col-8"><input type="text" class="form-control" style="border:2px solid #f4f4f4;" placeholder="Value123"></div>
+                    <div class="p-2 bd-highlight"><button class="btn btn-danger" style="background:#f83227">Remove</button></div>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 p-0">
+                <div class="d-flex flex-row bd-highlight mb-3">
+                    <div class="p-2 bd-highlight col-8"><input type="text" class="form-control" style="border:2px solid #f4f4f4;" placeholder="Nikon01!"></div>
+                    <div class="p-2 bd-highlight"><button class="btn btn-danger" style="background:#f83227">Remove</button></div>
+                  </div>
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="d-flex flex-row bd-highlight mb-3">
+                    <div class="p-2 bd-highlight col-8"><input type="text" class="form-control" placeholder="Enter new admin pasword" style="border:2px solid #f4f4f4;" value="Enter new admin password"></div>
+                    <div class="p-2 bd-highlight"><button class="btn btn-primary text-center" style="width:160%">Add</button></div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h2 class="mt-5">Country Manager Passwords</h2>
+        <h5>Add or remove country manager passwords,removing a country completely, will delete all their existing surveys</h5>
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-md-6 p-0">
+                    <div class="ml-1 p-1 mt-3 col-8" style="border-radius:5px;background:#f4f4f4"><h6 class="ml-1 mt-2">Australia</h6></div>
+                    <div class="d-flex flex-row bd-highlight mb-3">
+                        
+                        <div class="p-2 bd-highlight col-8"><input type="text" class="form-control" style="border:2px solid #f4f4f4;" placeholder="NKaus100"></div>
+                        <div class="p-2 bd-highlight"><button class="btn btn-danger" style="background:#f83227">Remove</button></div>
+                      </div>
+                </div> 
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6 p-0">
+                    <div class="ml-1 p-1 mt-3 col-8" style="border-radius:5px;background:#f4f4f4"><h6 class="ml-1 mt-2  ">Belgium</h6></div> 
+                    <div class="d-flex flex-row bd-highlight mb-3">
+                        
+                        <div class="p-2 bd-highlight col-8"><input type="text" class="form-control" style="border:2px solid #f4f4f4;" placeholder="NKbel100"></div>
+                        <div class="p-2 bd-highlight"><button class="btn btn-danger" style="background:#f83227">Remove</button></div>
+                      </div>
+                </div> 
+            </div>
+        </div>
+        <select class="custom-select col-md-6 mt-3"><option *ngFor="let data of country;let x=index" (change)="get_index(x)">{{data}}</option></select>
+        <input type="text" class="form-control col-md-6 mt-2" value="Enter a new country manager password">
+        <button class="btn btn-primary col-md-6 mt-2 mb-5" style="background:#0068ea">Add</button>
+    </div>
+</div>
+</div>

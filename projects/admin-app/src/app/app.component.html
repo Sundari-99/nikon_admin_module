@@ -1,0 +1,76 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<div class="h-100 row m-0 p-0">
+  <div class="d-block d-xs-none w-100">
+    <ng-sidebar-container
+        (onBackdropClicked)="_onBackdropClicked()">
+      <ng-sidebar
+      *ngIf="current_url[1]!='login'"
+        [(opened)]="_opened"
+        [mode]="_MODES[_modeNum]"
+        [keyClose]="_keyClose"
+        [position]="_POSITIONS[_positionNum]"
+        [dock]="_dock"
+        [dockedSize]="'100px'"
+        [autoCollapseHeight]="_autoCollapseHeight"
+        [autoCollapseWidth]="_autoCollapseWidth"
+        [closeOnClickOutside]="_closeOnClickOutside"
+        [closeOnClickBackdrop]="_closeOnClickBackdrop"
+        [showBackdrop]="_showBackdrop"
+        [animate]="_animate"
+        [trapFocus]="_trapFocus"
+        [autoFocus]="_autoFocus"
+        [sidebarClass]="'demo-sidebar'"
+        [ariaLabel]="'My sidebar'"
+        (onOpenStart)="_onOpenStart()"
+        (onOpened)="_onOpened()"
+        (onCloseStart)="_onCloseStart()"
+        (onClosed)="_onClosed()"
+        (onTransitionEnd)="_onTransitionEnd()">
+        <app-sidemenu class="mobile_{{isMobile}}"></app-sidemenu>
+      </ng-sidebar>
+      <div ng-sidebar-content>
+        <div class="w-100 border-bottom">
+        <header class="row p-0 m-0 sticky-top bg-white" *ngIf="current_url[2]!='login'">
+            <div class="col-8 align-items-center d-flex py-3">
+            <button class="bg-white border-0 pointer no-outline p-0" type="button" (click)="_toggleOpened()">
+            <span class="navbar-toggler-icon"><fa-icon class="position-absolute text-secondary" [icon]="faBars" size='sm'></fa-icon>
+            </span>
+          </button>
+          <div class="pl-3 pointer no-outline">
+            <span class="m-0">Nikon</span>
+          </div>
+          </div>
+          <div class="ml-auto">
+            <button class="bg-white border-0 pointer no-outline p-0">
+            <fa-icon class="ng-fa-icon mr-1 text-secondary position-relative" [icon]="faBell" size='md'></fa-icon>
+            </button>
+            <button class="bg-white border-0 pointer no-outline p-0 ml-3">
+            <fa-icon class="ng-fa-icon mr-1 text-secondary" [icon]="faSignoutAlt" size='md'></fa-icon>
+            </button>
+          </div>
+        </header>
+        </div>
+        <router-outlet></router-outlet>
+      </div>
+    </ng-sidebar-container>
+  </div>
+</div>
+<hr/>
+<div class="alert_container">
+  <div *ngFor="let alert of alerts" class="col-12 col-md-6 col-lg-3 ml-auto m-3">
+    <alert [type]="alert.type" [dismissible]="'true'" [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)">{{ alert.msg }}</alert>
+  </div>
+</div>
+<div *ngIf="is_delete_confirmation" [config]="{ show: true }" (onHidden)="onConfirmationModelHidden()" bsModal #autoShownModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-auto-name">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="modal-body text-center">
+          <p>{{(delete_data?.message)?delete_data?.message:'Do you want to confirm?'}}</p>
+          <button type="button" class="btn btn-light mr-3" (click)="confirm_delete()" >Yes</button>
+          <button type="button" class="btn btn-dark" (click)="close_delete_confirmation()" >No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

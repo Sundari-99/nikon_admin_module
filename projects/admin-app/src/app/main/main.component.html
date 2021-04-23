@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-center m-5">
+    <div class="container ml-5">
+        <h2 class="mt-4">Global Admin Passwords</h2>
+        <h5>Add or remove global admin passwords</h5>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex flex-row bd-highlight mb-3">
+                        <div class="p-2 bd-highlight"><input type="text" class="form-control"></div>
+                        <div class="p-2 bd-highlight"><button class="btn btn-danger">Remove</button></div>
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex flex-row bd-highlight mb-3">
+                        <div class="p-2 bd-highlight"><input type="text" class="form-control"></div>
+                        <div class="p-2 bd-highlight"><button class="btn btn-danger">Remove</button></div>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex flex-row bd-highlight mb-3">
+                        <div class="p-2 bd-highlight"><input type="text" class="form-control"></div>
+                        <div class="p-2 bd-highlight"><button class="btn btn-danger">Remove</button></div>
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex flex-row bd-highlight mb-3">
+                        <div class="p-2 bd-highlight"><input type="text" class="form-control" placeholder="Enter new admin pasword"></div>
+                        <div class="p-2 bd-highlight"><button class="btn btn-primary text-center" style="width:160%">Add</button></div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2 class="mt-5">Country Manager Passwords</h2>
+            <h5>Add or remove country manager passwords,removing a country completely, will delete all their existing surveys</h5>
+            <select class="custom-select col-md-4 mt-3"><option *ngFor="let data of country;let x=index" (change)="get_index(x)">{{data}}</option></select>
+            <input type="text" class="form-control col-md-4 mt-2" placeholder="Enter a new country manager password">
+            <button class="btn btn-primary col-md-4 mt-2">Add</button>
+        </div>
+    </div>
+    </div>
