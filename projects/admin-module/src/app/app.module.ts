@@ -26,6 +26,9 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { GlobalSurveyComponent } from './global-survey/global-survey.component';
+import { SurveyOneComponent } from './survey-one/survey-one.component';
+import { CountryAdminComponent } from './country-admin/country-admin.component';
+import { GlobalAdminComponent } from './global-admin/global-admin.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { GlobalSurveyComponent } from './global-survey/global-survey.component';
     LoginComponent,
     HomeComponent,
     ToolbarComponent,
-    GlobalSurveyComponent
+    GlobalSurveyComponent,
+    SurveyOneComponent,
+    CountryAdminComponent,
+    GlobalAdminComponent
   ],
   imports: [
     BrowserModule,

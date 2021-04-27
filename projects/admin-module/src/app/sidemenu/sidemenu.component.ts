@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../common.service';
 
 @Component({
   selector: 'app-sidemenu',
@@ -8,16 +9,29 @@ import { Component, OnInit } from '@angular/core';
 export class SidemenuComponent implements OnInit {
 
   sideMenu = [
-    { name: "Login", route: "login", toolTip: "login class material", icon: "account_box" },
-    { name: "Survey Management", route: "survey", toolTip: "survey class material", icon: "event" },
-    { name: "Logout", route: "", toolTip: "logout class material", icon: "logout" }
+    { name: "Home", route: "home", toolTip: "home", icon: "home" },
+    { name: "Login", route: "login", toolTip: "login", icon: "account_box" },
+    { name: "Global Admin Settings", route: "global-admin", toolTip: "global admin", icon: "admin_panel_settings" },
+    { name: "Country Admin Settings", route: "country-admin", toolTip: "country admin", icon: "manage_accounts" },
+    { name: "Global Survey Management", route: "survey", toolTip: "admin survey", icon: "event" },
+    { name: "Country Survey Management", route: "survey_1", toolTip: "country survey", icon: "event_note" },
+    { name: "Logout", route: "login", toolTip: "logout", icon: "logout" }
   ];
   
   collapse = false;
+  opened = false;
+  public current_url;
 
-  constructor() { }
+  constructor(private common: CommonService) { }
 
   ngOnInit(): void {
+    this.common.isOpened.subscribe(value => {
+      this.opened = value;
+    })
+
+    this.common.current_url.subscribe(value => {
+      this.current_url = value;
+    })
   }
 
   toggleSidebar() {

@@ -9,9 +9,15 @@ export class CommonService {
 
   constructor() { }
 
-  @Output() isExpand: EventEmitter<String> = new EventEmitter();
+  	@Output() isOpened: EventEmitter<String> = new EventEmitter();
 	set_toogle(value)
 	{
-		this.isExpand.emit(value);
+		this.isOpened.emit(value);
+	}
+
+	@Output() current_url: EventEmitter<String> = new EventEmitter();
+	set_current_url(value)
+	{
+		this.current_url.emit(value);
 	}
 }

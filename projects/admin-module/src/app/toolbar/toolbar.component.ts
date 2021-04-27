@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../common.service';
 import { SidemenuComponent } from '../sidemenu/sidemenu.component';
 
 @Component({
@@ -8,13 +9,19 @@ import { SidemenuComponent } from '../sidemenu/sidemenu.component';
 })
 export class ToolbarComponent implements OnInit {
 
-  private sidenav: SidemenuComponent;
-  constructor() { }
+  public opened;
+  current_url: any;
+  constructor(private common: CommonService) { }
 
   ngOnInit(): void {
+
+    this.common.current_url.subscribe(value => {
+      this.current_url = value;
+    })
   }
 
-  toggleChange() {
-    this.sidenav.toggleSidebar();
+  toggle() {
+    this.opened = !this.opened;
+    this.common.set_toogle(this.opened);
   }
 }

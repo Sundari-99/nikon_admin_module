@@ -1,0 +1,43 @@
+<div>
+    <div>
+        <p>China Survey Management</p>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" colspan="2">Survey</th>
+            <th scope="col">Country</th>
+            <th scope="col">Last edited</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of global_survey; let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>
+
+              <div *ngIf="!data.surv_Editable">
+              {{data.survey}}
+              </div>
+
+              <div *ngIf="data.surv_Editable">
+                <input type="text" name="survey" [(ngModel)]="data.survey">
+              </div>
+
+            </td>
+
+            <td><small style="color: blue;"><sup (click)="onSurveyEditable(i)">rename</sup></small></td>
+            <td>
+              {{data.country}}
+            </td>
+            <td>{{data.date}}</td>
+            <td><button class="button">View</button></td>
+            <td><button class="button">Edit</button></td>
+            <td><button class="button" *ngIf="isCheck">Delete</button></td>
+            <td><button class="button">Copy URL</button></td>
+            <td><button class="button">Duplicate survey</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>

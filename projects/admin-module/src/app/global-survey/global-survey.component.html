@@ -1,31 +1,56 @@
 <div>
-    <div>
-        <p>Global Survey Management</p>
-    </div>
+  <div>
+      <p>Global Survey Management</p>
+  </div>
 
-    <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col" colspan="2">Survey</th>
-            <th scope="col" colspan="2">Country</th>
-            <th scope="col">Last edited</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let data of global_survey; let i=index">
-            <th scope="row">{{i+1}}</th>
-            <td>{{data.survey}}</td>
-            <td><small *ngIf="i!=0" style="color: blue;"><sup>rename</sup></small></td>
-            <td>{{data.country}}</td>
-            <td><mat-icon *ngIf="i!=0"><sub>edit</sub></mat-icon></td>
-            <td>{{data.date}}</td>
-            <td><button class="button">View</button></td>
-            <td><button class="button" *ngIf="i!=0">Edit</button></td>
-            <td><button class="button" *ngIf="i!=0">Delete</button></td>
-            <td><button class="button">Copy URL</button></td>
-            <td><button class="button">Duplicate survey</button></td>
-          </tr>
-        </tbody>
-      </table>
+  <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" colspan="2">Survey</th>
+          <th scope="col" colspan="2">Country</th>
+          <th scope="col">Last edited</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of global_survey; let i=index">
+          <th scope="row">{{i+1}}</th>
+          <td>
+
+            <div *ngIf="!data.surv_Editable">
+            {{data.survey}}
+            </div>
+
+            <div *ngIf="data.surv_Editable">
+              <input type="text" name="survey" [(ngModel)]="data.survey">
+            </div>
+
+          </td>
+
+          <td><small *ngIf="i!=0" style="color: blue;"><sup (click)="onSurveyEditable(i)">rename</sup></small></td>
+          <td>
+
+            <div *ngIf="!data.coun_Editable">
+            {{data.country}}
+            </div>
+
+            <div *ngIf="data.coun_Editable">
+              <select name="country" [(ngModel)]="data.country">
+                <option *ngFor="let value of country" value="{{value}}" selected="{{data.country}}">{{value}}</option>
+              </select>
+            </div>
+
+          </td>
+          <td *ngIf="!isCheck[i]"><mat-icon *ngIf="i!=0"><sub (click)="onCountryEditable(i)">edit</sub></mat-icon></td>
+          <td *ngIf="isCheck[i]"><mat-icon *ngIf="i!=0"><sub (click)="onCountryEditable(i)">check_circle</sub></mat-icon></td>
+          <td>{{data.date}}</td>
+          <td><button class="button">View</button></td>
+          <td *ngIf="!isCheck[i]"><button class="button" *ngIf="i!=0" (click)="clickToEdit(i)">Edit</button></td>
+          <td *ngIf="isCheck[i]"><button class="button" *ngIf="i!=0" (click)="clickToEdit(i)">Ok</button></td>
+          <td><button class="button" *ngIf="i!=0">Delete</button></td>
+          <td><button class="button">Copy URL</button></td>
+          <td><button class="button">Duplicate survey</button></td>
+        </tr>
+      </tbody>
+    </table>
 </div>

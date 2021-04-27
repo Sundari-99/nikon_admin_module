@@ -1,1 +1,1 @@
-<?php <include_once("/dist/admin-module/index.html")> ?>
+<?php include_once("home.html"); ?>
