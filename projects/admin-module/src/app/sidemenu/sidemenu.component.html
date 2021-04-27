@@ -1,15 +1,15 @@
 <mat-sidenav-container class="full-height" autosize="true">
-  <mat-sidenav mode="side" [opened]="opened" (click)="toggleSidebar()">
+  <mat-sidenav mode="side" [opened]="current_url[2]!='login' && current_url[2]!='logout'" (click)="toggleSidebar()">
       
       <div mat-menu-item class="with-icon padded" (click)="$event.stopPropagation()">
-        <div class="logo-nav" [hidden]="collapse">
+        <div class="logo-nav" [hidden]="!collapse">
             <img class="image" src="../../assets/icons/Nikon-Logo.png">
         </div>
       </div>
 
       <div mat-menu-item *ngFor="let i of sideMenu; let in=index" [routerLink]="['admin/', i.route]" class="with-icon padded" (click)="$event.stopPropagation()">
           <mat-icon [matTooltip]="i.toolTip">{{ i.icon }}</mat-icon>&nbsp;
-          <span [hidden]="collapse">{{ i.name }}</span>
+          <span [hidden]="!collapse">{{ i.name }}</span>
       </div>
   </mat-sidenav>
 

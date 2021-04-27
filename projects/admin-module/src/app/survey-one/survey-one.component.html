@@ -33,7 +33,8 @@
             </td>
             <td>{{data.date}}</td>
             <td><button class="button">View</button></td>
-            <td><button class="button">Edit</button></td>
+            <td *ngIf="!toCheck[i]"><button class="button" (click)="clickToEdit(i)">Edit</button></td>
+            <td *ngIf="toCheck[i]"><button class="button" (click)="clickToEdit(i)">Ok</button></td>
             <td><button class="button" *ngIf="isCheck">Delete</button></td>
             <td><button class="button">Copy URL</button></td>
             <td><button class="button">Duplicate survey</button></td>

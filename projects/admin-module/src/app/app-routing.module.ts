@@ -10,7 +10,7 @@ import { SurveyOneComponent } from './survey-one/survey-one.component';
 
 
 const routes: Routes = [
-  { path :'', redirectTo:'admin/login',pathMatch:'full'},
+  { path :'', redirectTo:'admin',pathMatch:'full'},
   { path: 'admin/login', component: LoginComponent },
   { path: 'admin/home', component: HomeComponent },
   { path: 'admin/survey', component: GlobalSurveyComponent},

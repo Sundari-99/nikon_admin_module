@@ -13,6 +13,7 @@ export class SurveyOneComponent implements OnInit {
   ];
 
   public isCheck:boolean;
+  public toCheck = [];
 
   constructor() { }
 
@@ -28,6 +29,11 @@ export class SurveyOneComponent implements OnInit {
     if(this.global_survey.length > 1) {
       this.isCheck = !this.isCheck;
     }
+  }
+
+  clickToEdit(i) {
+    this.global_survey[i].surv_Editable = !this.global_survey[i].surv_Editable;
+    this.toCheck[i] = !this.toCheck[i];
   }
 
 

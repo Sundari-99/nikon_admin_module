@@ -20,7 +20,7 @@ export class ToolbarComponent implements OnInit {
     })
   }
 
-  toggle() {
+  toggle(e) {
     this.opened = !this.opened;
     this.common.set_toogle(this.opened);
   }

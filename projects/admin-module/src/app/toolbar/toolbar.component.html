@@ -1,7 +1,7 @@
 <div class="w-100 border-bottom">
     <mat-toolbar class="row p-0 m-0 sticky-top bg-white" *ngIf="current_url[2] !='login' && current_url[2] != 'logout'">
             <div class="col-12 align-items-center d-flex py-3">
-                <mat-icon class="bg-white border-0 pointer no-outline p-0" (click)="toggle()">list</mat-icon>
+                <mat-icon class="bg-white border-0 pointer no-outline p-0" (click)="toggle($event)">list</mat-icon>
                 <div class="pl-3 pointer no-outline">
                     <p class="m-0">Nikon <br>
                     <span class="slogan" style="color: grey;">Stay Home & Stay Safe</span>

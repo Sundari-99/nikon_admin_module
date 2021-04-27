@@ -19,14 +19,13 @@ export class SidemenuComponent implements OnInit {
   ];
   
   collapse = false;
-  opened = false;
   public current_url;
 
   constructor(private common: CommonService) { }
 
   ngOnInit(): void {
     this.common.isOpened.subscribe(value => {
-      this.opened = value;
+      this.collapse = value;
     })
 
     this.common.current_url.subscribe(value => {
