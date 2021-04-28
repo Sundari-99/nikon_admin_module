@@ -9,7 +9,7 @@ const cwd = process.cwd();
 app.use(express.static(cwd + '/dist'));
 
 app.get('/*', function(req,res) {
-    res.sendFile(path.join(cwd+'/dist/admin-app/index.html'));
+    res.sendFile(path.join(cwd+'/dist/admin-module/home.html'));
 });
 
 // Start the app by listening on the default Heroku port
